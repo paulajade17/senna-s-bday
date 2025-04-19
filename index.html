@@ -1,12 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senna's Birthday</title>
+    <title>Happy 30th Birthday, Senna!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://drive.google.com/file/d/1-eJhKwVD7GilY-sKj545k4J4rN5iUdLD/view?usp=drive_link" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cabin', sans-serif;
+            background-image: url('https://images.squarespace-cdn.com/content/v1/5fe4caeadae61a2f19719512/20797e3a-b1cb-46d4-b4ab-a6e695c3fcc3/The+Edge+of+the+Forest?format=1000w');
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color:#499eb3;
+            color: #ffffff;
+            padding: 40px 10px;
+            border-bottom: 1px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.4em;
+            margin-top: 10px;
+        }
+
+        .main-content {
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .greeting {
+            margin-top: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: #085078;
+        }
+
+        .message {
+            font-size: 1.2em;
+            margin-top: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .fun-facts {
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fun-facts h2 {
+            font-size: 2em;
+            color: #085078;
+            margin-bottom: 20px;
+        }
+
+        .fun-facts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fun-facts li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .birthday-messages {
+            margin: 40px auto;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .message-box img {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            float: left;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .message-box p {
+            margin-top: 0;
+            line-height: 1.5;
+        }
+
+        .slideshow-container {
+            margin: 50px auto;
+            position: relative;
+            max-width: 700px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .video-container {
+            max-width: 750px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #499eb3;
+            color: #ffffff;
+            font-size: 1em;
+            border-top: 1px solid #ffffff;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.5em;
+            user-select: none;
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .additional-photos {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            justify-content: center;
+            margin: 40px auto;
+            max-width: 1100px;
+        }
+
+        .additional-photos img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            
+        }
+
+        .video-message {
+            background-color:#499eb3;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            background-color: #499eb3;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+
+        .sports-day-message h2 {
+            background-color:#499eb3;
+            color:#ffffff;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+
+
+        .sports-day-video {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden; /* Hides overflow */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* For absolute positioning of iframe */
+            height: 450px; /* Set height as desired */
+        }
+
+        .sports-day-video iframe {
+            position: absolute; /* Positioning for cropping */
+            top: 50%;
+            left: 50%;
+            width: 150%; /* Increase width to cover sides */
+            height: 150%; /* Increase height as needed */
+            transform: translate(-50%, -50%); /* Center the video */
+            object-fit: cover; /* Crop and cover */
+            border: none;
+        }
+        
+
+        .mums-gift-message h1 {
+            background-color:#499eb3;
+            color:#ffffff;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+
+
+        .mums-gift-video {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden; /* Hides overflow */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* For absolute positioning of iframe */
+            height: 450px; /* Set height as desired */
+            margin-bottom: 30px;
+
+        }
+
+        .mums-gift-video iframe {
+            position: absolute; /* Positioning for cropping */
+            top: 50%;
+            left: 50%;
+            width: 150%; /* Increase width to cover sides */
+            height: 150%; /* Increase height as needed */
+            transform: translate(-50%, -50%); /* Center the video */
+            object-fit: cover; /* Crop and cover */
+            border: none;
+        }
+
+
+
+
+
+    </style>
 </head>
+
 <body>
-    <h1>Welcome to Senna's Birthday Website!</h1>
-    <p>This is the homepage.</p>
+    <header>
+        <h1>Happy 30th Birthday, Senna!</h1>
+        <p>Celebrating 30 amazing years of love, adventure, and achievements!</p>
+    </header>
+    <div class="main-content"> 
+        <img src="https://drive.google.com/thumbnail?id=1hlzQQjICuPnk7rIibdgSMxidsTIhxM-z&sz=s4000"alt="Senna as a baby with dad">
+        <img src=https://media-lhr8-1.cdn.whatsapp.net/v/t61.24694-24/420616272_348581938263951_1258959422527629601_n.jpg?ccb=11-4&oh=01_Q5AaIPveuvM-8A-Sg89y0rgwGodVnjp0BTbf9bwkJ08f5D5w&oe=673647ED&_nc_sid=5e03e0&_nc_cat=100alt="Senna as a chunky baby">
+        <img src="https://drive.google.com/thumbnail?id=1VgiGZ-1RNz-jmx9BfLnbFOJbetCt93d7&sz=s4000"alt="Senna as a toddler">
+        <img src="https://drive.google.com/thumbnail?id=1y1yw3z2UjCA356vuFmjggHLXyVXLpl5Z&sz=s4000"alt="Senna as a toddler 2">
+        <img src="https://drive.google.com/thumbnail?id=1-eJhKwVD7GilY-sKj545k4J4rN5iUdLD&sz=s4000"alt="Senna as a teen">
+        <img src="https://drive.google.com/thumbnail?id=1EF43wGZD0OrwRi7fSag5MoCQOtBxeXAK&sz=s4000"alt="Senna as a teen">
+        <img src="https://drive.google.com/thumbnail?id=1NAkGfsN0h4Oj4t83ive27SGSKjj902Fw&sz=s4000" alt="Senna as a young adult">
+        <img src="https://drive.google.com/thumbnail?id=1LOBoqn-3BYXI7tCFgUgIRqYdlccrB6f2&sz=s4000"alt="Senna as smiling at Brighton">
+        <img src="https://drive.google.com/thumbnail?id=10KehmcXuCIQp8ZjJuKQvQrnmagzZXgK8&sz=s4000" alt="Senna posing in Malaysia">
+        <img src="https://drive.google.com/thumbnail?id=1iBwpu_0fXWhHeKpJLxGwt7Ywi37ENuWU&sz=s4000" alt="Senna posing in Malaysia">
+        <img src="https://drive.google.com/thumbnail?id=1PPbSAcyjNHOD5euc8xpppEiFsVDmTkAP&sz=s4000"alt="Senna with his car">
+        <img src="https://drive.google.com/thumbnail?id=10vd3gmLwiCWdkDiUFGuvfsuLRxw29nKk&sz=s4000"alt="Senna as a Husband">
+        <div class="greeting">30 Years Young - Let's Get It!!</div>
+        <div class="message">
+            Looking through your journey from a baby to a man,
+            you've grown into an incredible person, and we are all so proud of you. 
+            May this year be filled with love, adventure, and unforgettable moments. 
+
+            <p>Here's to many more amazing years!</p>
+        </div>
+    </div>
+
+    <div class="fun-facts">
+        <h2>Fun Facts About Senna</h2>
+        <ul>
+            <li>Is a BIG BACK, always chomping.</li>
+            <li>Thinks he's the best chef in the fam.</li>
+            <li>Third strongest in the fam after PJ and Haps.</li>
+            <li>Smash Burger King.</li>
+            <li>Stiff Dancer.</li>
+            <li>Tug of War is not his forte.</li>
+            <li>Him and mum tricking the karaoke machine with 100%.</li>
+            <li>Letting Haps tumble down the stairs.</li>
+            <li>Always getting PJ in trouble.</li>
+            <li>Moet and him getting swole at Sydenham gym together.</li>
+            <li>Code master and tech enthusiast.</li>
+            <li>Suavest 5ft 2 lad we know.</li>
+            <li>Does not know how to rest.</li>
+            <li>Haps's first employer.</li>
+            <li>Early riser.</li>
+            <li>Loves hiking and capturing scenic views.</li>
+            <li>Extremely disciplined—always striving for excellence.</li>
+            <li>Always ready to help and support—an amazing brother, husband and son!</li>
+          
+        </ul>
+        <div class="birthday-messages">
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1jzfrI8Xl2RYPf4upSkdiGu1_DVwALHqD&sz=s4000" alt="PJ and Senna">
+                <p><strong>PJ:</strong> Happy 30th Birthday Senna!</p>
+
+                <p>I can't believe it! You're getting old, lad—where has the time gone? 
+                    I'm so proud of the man you've become. I honestly couldn't have asked for a better brother. 
+                    Even though we roast each other on a daily, there's no one else I'd rather have by my side.
+                    Your tough love can be a bit much at times, but deep down, I know you're just a big softie who wants the best for everyone. 
+                    We all appreciate everything you've done for us.</p>
+                    
+                    <p>From our crazy adventures—whether it's us fighting for our lives at Seven Sisters, trying new places to eat while you remind me, "I have no business!", 
+                    helping me with my Amazon struggles, supporting me through my tech journey, reminding me that I was STUFFED and have come a long way 😂 
+                    Honestly the list is endless and the memories are priceless. 
+                    
+                    <p>Thank you for always encouraging me to be better and motivating me to challenge myself in ways I never thought were possible. 
+                        If it wasn't for you I wouldn't have finally found the courage to get back on the motorways! You inspire me to dream big and think beyond limitations.
+                        I'm honestly so grateful to have you in my life. Your discipline and drive is truly inspiring and your mindset is unmatched.
+                         I hope to make you proud one day. You're someone I look up to, and I know I can always count on you. 
+                    <p>I hope you take more time to rest, because you truly deserve it.
+                    Here’s to more hikes, laughter and memories.
+               
+                    <p>Love you, bro, and cheers to 30 amazing years and many more to come! 🎉💙
+                        <p>Big Chop
+                    </p>
+            </div>
+          
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1Y-MdWNCQAy44nFghHM7BS2nYzL_8SBsq&sz=s4000" alt="Moet and Senna">
+                <p><strong>Moet:</strong> Happy 30th, BroSkillet!! 🥳💛🎊🎂✨
+                    <p>I mentioned how your thirties are the new twenties. Even though muffin tops are cute 🧁 
+                        How about a birthday present to yourself, being you keeping up the cardio 🏃🏾‍♀to maintain your youth?
+                        <p>Dw, I'll get to the point where I'm more wham than you or more agile. Then I'll finally be in the rankings of 'Strongest in the Fam' 😌 
+                            We can have a shadow boxing or tug-of-war match to determine whose Number 1️⃣
+                            <p>Keep up the gains, though. You're doing great and hopefully feeling great, too 💪🏽
+                                <p>I'll continue One Piece for the both of us, and then we can talk about leaked manga content, hehe. Hopefully, we can watch Megalo Box soon cos I think we'll really like it.
+                                     Maybe it will motivate you to finally do those boxing lessons too 🥊 
+
+                                     <p>Tbh watching films, series and funny vids is probs my fave pastime with you. It's a chill and enjoyable vibe for all of us. Especially from C Breezy to our French Short King on screen - you allocating PJ's MCM's have me chortling 😂  
+
+                                        <p>Or when PJ or Haps have you cornered and you're there giggling in pain. Can't lie, I can't help you out cos your giggles are too infectious, and they gotta get you back for all the "Boulder Bash" jokes 🪨
+
+                                            <p>I'm proud of you and very grateful to have you as my brother. You are blessed and deserve to be happy and proud of yourself, too. 
+
+                                                <p>Next time you're around, we should try the crayfish noodles 🍜 Maybe I'll make my tasty soup for you too 🍲
+
+                                                    <p>Anyways, thanks for reading, g. Imma make like your tiddies and BOUNCE ⛹🏾
+
+                                                        <p>-MChisel</p>
+            </div>
+          
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1a2AYMaGwKYUwnBb__FTJDahJBoPOzDZf&sz=s4000" alt="Haps and Senna">
+                <p><strong>Haps:</strong> Happy 30th Birthday, Brother!</p>
+
+                    <p>First off, 30?! You’re officially closer to 40 than 20 now. I know, it’s a lot to process. But hey, if you need someone to remind you of how old you’re getting, I’m here for that. 
+                    All jokes aside, thanks for everything. I'm gonna be honest every time I'm feeling the burn 💀 or starting to feel unmotivated in uni, I look at your transcripts 😂 </p>
+
+                    <p>Seeing how much you improved in Year 2 and Year 3. You really stepped it up, and seeing that gave me the push to keep going. If you could do it, I could definitely handle whatever I’m dealing with. 
+                    You've been an inspiration for me with uni. Bro - great example of improvement and hard work.</p>
+
+                    <p>Also, let’s talk about all those coffees I made you 👀 I really hope you appreciated them—especially those whipped coffees during lockdown.
+                    I spent way too much time perfecting that foam. Honestly, I was just trying to keep you and boroafa fueled up for your workdays and i also had nothing to do 😂 
+                    I know you both had a lot going on, so I thought I’d help out by making sure you had a good cup of coffee to start your day (even if it was a little too strong sometimes).</p>
+
+                    <p>Anyway, it’s crazy to think you’re 30 now, but you’ve earned every bit of success you’ve had, and you should be proud.  Watching you improve year after year has inspired me.
+                    So, enjoy your day today—take some time to relax and celebrate! You've earned it. And hey, if you want another coffee, just let me know… although maybe I'll let boroafa take care of that one this time.</p>
+                    
+                    <p>Happy Birthday again, old man! Thanks for everything. I hope the Mexicanos without me was worth it... 👺</p>
+            </div>
+   
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1aQWPi4lOsV5FWp8W_Dc7MSVKDZ6pOxgu&sz=s4000" alt="Mum and Senna">
+                <p><strong>Mum:</strong> Happy Birthday Son
+                
+                    <p>Today you have reached the tender age of 30, Alhamdulillah. 
+
+                        <p>From the day you were born till today you have only given me immense joy with the exception of your RuneScape and gaming times during school, but those days are memorable! 
+
+                            <p>I am soo proud of who you have become a self-made man with a handsome look, a giving charitable man, with a soft clean heart to match. 
+
+                                <p>You are always striving to be healthy and fit, although eating fat Twins at times comes in the way! 
+
+                                    <p>Your mindset of continuously bettering yourself through reflection and learning, be it character building or Islamic studies, professional and personal development is something of great value. 
+
+                                        <p>You are the epitome of a filial, righteous and pious son, a loving and supportive husband and sibling, you tick all the boxes  10/10!
+
+                                            <p>I wanted to gift you something that would benefit you daily, in this world and the hereafter and would grant you  immense blessings and rewards. 
+                
+                                                <p>What better gift than giving a wheel chair to a vulnerable needy person to use as a form of Sadaqah Jariyah in Makkah  in  Masjid Al Haram the most sacred masjid with the Kaaba where 4 million pilgrims visit each year and where 2 rakat prayers earns 100,000 good deeds. May your scales of deeds immensely increase with this gift and let it also be a means to enter into Jannatul Firdaus.
+
+                                                    <p>Now to end this message I want to remind you that I love you with all my heart my one and only SON and my duas will be with you always, have a great day with all of us in Snowdonia!
+                
+                
+                
+                
+                </p>
+            </div>
+    
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1b8oYhjQEk28FnqEWca_A3ZVGm_SeDLyu&sz=s4000" alt="Mae and Senna">
+                <p><strong>Mae:</strong> Happy 30th Birthday, Big Bro! 🎂🎉
+
+                    Today, I just want to say how incredibly grateful I am to have you as my brother. From as far back as I can remember, you’ve been a huge inspiration to me—someone I can look up to, rely on, and learn from. 
+                    You’ve taught all of us so much, just by being who you are: driven, resilient, and genuinely one of the most thoughtful people I know even if it's not as obvious!
+                    
+                    I’m thankful for all the moments you’ve filled with laughter and life, whether it was us singing along to J-pop, K-pop or any tunes in the car, sweeping the floor with me all those years ago, karaoke, or the experimentation with new recipes.
+                    
+                    More than anything, I’m grateful for the way you show up for the people you love, and for the example you set every day. For all the siblings, you've been a wonderful brother to have and look up to, a caring and loving son for mum and husband for Lanna.
+                    
+                    Let's celebrate everything you’ve become, and everything still waiting for you in the years ahead. You deserve all the happiness and success in the world, and I’m extremely blessed to have been brought up alongside you.
+                    
+                    Happy 30th, and thank you for being you. ⁠❤️</p>
+            </div>
+        
+
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1A7bWRqM7ISxswUynzwZFXIxKg9wZDgbu&sz=s4000" alt="Lanna and Senna">
+                <p><strong>Lanna:</strong> Happy Birthday to my favourite person! 
+                <p>Can't wait to explore our 30s together! 
+                    InshaAllah we'll have the best time doing all the things we love! 
+                    <P>I loved watching you becoming the most amazing man. I am so proud of the person you have becoming today, and of everything we have acheived together. We worked hard building for the future in our 20s, now it's time to play hard in our 30s!!
+                         And give our fam some new members 😄 💕
+                       <p> Love you so much
+                        <p> Lanna</p>
+
+
+                
+            </div>
+
+
+
+
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=13OBRHuuqJ2Aq1pSkisByUvYoBULLm1zE&sz=s4000" alt="Salma and Senna">
+                <p><strong>Salma:</strong> Happy Big 30th, Bro! May Allah place an abundance of baraqah in your new age. I’m truly grateful for having you as a brother – someone who’s always been there to listen, share wisdom and guide me with sincerity (whether it be regarding relationships, jobs, finance and everything inbetween). We may not get the chance to chat as often as I’d like, but I genuinely enjoy our brief catch-ups and appreciate how supportive you’ve always been. And since you’ve been endlessly nudging me about it, I figured the best birthday gift I could give you this year is finally tying the knot! So see you 11th January insha’Allah, yeah?
+
+                    And, of course, I’m incredibly grateful that you gave me my first-ever bhabi! Love you both, and I hope this year brings you even more happiness, success, and countless blessings. Here’s to both of us hitting new milestones, and to you having an unforgettable birthday filled with laughter, love, and countless blessings. Enjoy every moment, bro!</p>
+                    
+                    <p>Salma x</p>
+            </div>
+
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1agBDMBRsX968LbLdMB7K4W3xPXe9BpRE&sz=s4000" alt="Auntie Nazia and Senna">
+                <p><strong>Auntie Nazia</strong> Happy Birthday Rayhan!! Cannot believe that one of my nephew is 30 years old!! Damn that definitely is not a good thing on my age. Honestly I know we don't speak much so I suppose this is a perfect opportunity for me to highlight how I am very proud of you as your aunt. The way you have grown into becoming such a gentleman, took upon urself without any pressure from family and kept in touch with your imaan and grew it so beautifully whilst influencing others around you is amazing. Your motivation with work commitments and to grow urself in ur career is so inspiring. I'll make dua that Allah always keeps u on the right path and give u all the blessings in this world and the here after. Your travels make me so fomo lol stay as you are xxx 
+                </p><p>Lots of love Nazia khala</p>
+            </div>
+    
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1nVLcFk7i32zJ2D7qeWsiA2aMzrwwDjSV&sz=s4000" alt="Fulham and Senna">
+                <p><strong>Fulham:</strong> Dearest Senna. It’s been a while. We’re are all wishing you the absolute best time and 30th year. May all your wishes come true. You have done amazingly well and we know you will keep up the track record and do even better during the long life you have ahead of you. 
+                    May your family be showered with an abundance of happiness and prosperity. 
+                    We know that your dad is extremely proud of you!!! Go Senna! Jajja in Uganda sends his love and longs to see you too. 
+                    Hope to see you soonest. With much love from all of us. </p><p>The Buza’s ❤️❤️❤️</p>
+            </div>
+            
+            <div class="message-box">
+                <img src="https://drive.google.com/thumbnail?id=1KapEURImr0BrqPNXnWKjJ0MubvOwXo9C&sz=s4000" alt="Auntie Sultana and Senna">
+                <p><strong>Auntie Sultana:</strong> To my dearest nephew who has grown up to be a handsome young, kind and loving person. I love the way you are present in everyone’s life. You make time and create opportunities to bring everyone together.
+
+                    May Allah bless you with a long life filled with piety and happiness. May you always be successful… Ameen </p>
+            </div>
+        </div>
+
+    <div class="additional-photos">
+        <img src="https://drive.google.com/thumbnail?id=1OSW_hcZLOn0R5BIDGjf1exs9XG1Vq4eA&sz=s4000" alt="Additional Photo 1">
+        <img src="https://drive.google.com/thumbnail?id=1CqdR__pWUemNUxVL3feLLwf0vCRrEDtk&sz=s4000" alt="Additional Photo 2">
+        <img src="https://drive.google.com/thumbnail?id=1kwLqV5MFZxNrWV8ltfc3w43xO4wOMB1I&sz=s4000" alt="Additional Photo 3">
+        <img src="https://drive.google.com/thumbnail?id=1G3cMQAWh7GvwvCXMsKuxj0SFAnS-U5bG&sz=s4000" alt="Additional Photo 4">
+        <img src="https://drive.google.com/thumbnail?id=16QmpS1DzjRB177IyE_NuNXXm31y7gyyd&sz=s4000" alt="Additional Photo 5">
+        <img src="https://drive.google.com/thumbnail?id=1S4QFnSfQyh8yqfrI5Bk4cflnQ9au9epb&sz=s4000" alt="Additional Photo 6">
+        <img src="https://drive.google.com/thumbnail?id=1yNlO8cBklmiJF8EtGo8wcB1M8LfRx-xo&sz=s4000" alt="Additional Photo 7">
+        <img src="https://drive.google.com/thumbnail?id=1-Yz3d40gCixmU-NxyjWYBOF7QplMsZgC&sz=s4000" alt="Additional Photo 8">
+        <img src="https://drive.google.com/thumbnail?id=1I1CFeLkfN33O6FP_H2GGYQ1hJHoz7bh4&sz=s4000" alt="Additional Photo 9">
+        <img src="https://drive.google.com/thumbnail?id=1YKYZacLFyiIZKuQ3CIC7bwkgZCy6raCD&sz=s4000" alt="Additional Photo 10">
+        <img src="https://drive.google.com/thumbnail?id=1jHC3xdEiZIKX_N5LBWILk91K0SSHq1n0&sz=s4000" alt="Additional Photo 11">
+        <img src="https://drive.google.com/thumbnail?id=1wB4xRaB6C0uu1nMHwqIY___M92vtcCCy&sz=s4000" alt="Additional Photo 12">
+        <img src="https://drive.google.com/thumbnail?id=1LzI03u3tW2SsefCPa9Ijq-ytPod4lvy8&sz=s4000" alt="Additional Photo 13">
+        <img src="https://drive.google.com/thumbnail?id=1XDB30YD1NWNtTcB0ZxD3ryjRFCvkFAmo&sz=s4000" alt="Additional Photo 14">
+        <img src="https://drive.google.com/thumbnail?id=1S1BpsmVB2xZXR46IvunRpqZlWcUbnJMc&sz=s4000" alt="Additional Photo 15">
+        <img src="https://drive.google.com/thumbnail?id=1RxE0zFMovp1fsH-jUtcouDob_jd3QJIk&sz=s4000" alt="Additional Photo 16">
+        <img src="https://drive.google.com/thumbnail?id=1OnkOyWrU4zGkW30yIQJwgGTq4yOpo7gF&sz=s4000" alt="Additional Photo 17">
+        <img src="https://drive.google.com/thumbnail?id=1smCDv3H8AS2yZVUXxQKg1kX1lsgf384Q&sz=s4000" alt="Additional Photo 18">
+        <img src="https://drive.google.com/thumbnail?id=1EA1STbnb9463sPpIMW4Ry892wGmdP4A2&sz=s4000" alt="Additional Photo 19">
+        <img src="https://drive.google.com/thumbnail?id=1R-nBmjaBrfzxyCzeptdWBIe0YFprtd9a&sz=s4000" alt="Additional Photo 20">
+        <img src="https://drive.google.com/thumbnail?id=1DVWtb_ATUpoxeeFK9ZSGz9Qviu8wLa87&sz=s4000" alt="Additional Photo 21">
+        <img src="https://drive.google.com/thumbnail?id=1C3TmIwlCuK7SEJMMVmQ7a1TfKA8S7vOg&sz=s4000" alt="Additional Photo 22">
+        <img src="https://drive.google.com/thumbnail?id=1j8NX1i6SyXMf8hn8APoE6gxMixXfdrKj&sz=s4000" alt="Additional Photo 23">
+        <img src="https://drive.google.com/thumbnail?id=1rNolf_YK0ZAljCQD6htCfK68PbHdtCHy&sz=s4000" alt="Additional Photo 24">
+        <img src="https://drive.google.com/thumbnail?id=1C2DRyYYnWQ9XSnhgsPrHp1Ww2l8mv_it&sz=s4000" alt="Additional Photo 25">
+        <img src="https://drive.google.com/thumbnail?id=18s6uIkOBflQEfw4P_fJJ-F4R7RQ38HBN&sz=s4000" alt="Additional Photo 26">
+        <img src="https://drive.google.com/thumbnail?id=1AI9FV5LZBjgxaWjqJxX30LUhCwwEuzTV&sz=s4000" alt="Additional Photo 27">
+        <img src="https://drive.google.com/thumbnail?id=1xVqhdYqI_IJ5hn8_nW5ZlJ-Z79PRNdXA&sz=s4000" alt="Additional Photo 28">
+        <img src="https://drive.google.com/thumbnail?id=1rXjTOKk0otjoBGllj4rpKzZaLIIbtIXh&sz=s4000" alt="Additional Photo 29">
+        <img src="https://drive.google.com/thumbnail?id=1MGudcjQgS7Htt2eIYmcyUOscDfD9uWvR&sz=s4000" alt="Additional Photo 30">
+        <img src="https://drive.google.com/thumbnail?id=1WGQ41GhrkKXkrsWHr85t8Oyu5mam1Xq9&sz=s4000" alt="Additional Photo 31">
+        <img src="https://drive.google.com/thumbnail?id=1B9rf6zKA_cOwQZjLFQZq6LC4in_Zl5l3&sz=s4000" alt="Additional Photo 32">
+        <img src="https://drive.google.com/thumbnail?id=10AXo-N8CtMtRKpmyI_bVbN0jgteOyaAr&sz=s4000" alt="Additional Photo 33">
+        <img src="https://drive.google.com/thumbnail?id=12R4nrkAtlaip2xGsNDrl-EoZ7RRdC_xC&sz=s4000" alt="Additional Photo 34">
+        <img src="https://drive.google.com/thumbnail?id=1I7iALznLzMXITf58-dh8YnDzxKulciiX&sz=s4000" alt="Additional Photo 35">
+        <img src="https://drive.google.com/thumbnail?id=1SXjJtpwr2lp0MlLzwJK3mMibAsqo8cfi&sz=s4000" alt="Additional Photo 36">
+        <img src="https://drive.google.com/thumbnail?id=1XpXSVRR4lj9VVEdq_jAEDvZA7C9l4gPl&sz=s4000" alt="Additional Photo 37">
+        <img src="https://drive.google.com/thumbnail?id=1asShy-XB_OKat3Uc4x2PXPmAa980mr96&sz=s4000" alt="Additional Photo 38">
+        <img src="https://drive.google.com/thumbnail?id=1XtPjoMCxl17TP1tj55nSIwTD-Y1I6ClP&sz=s4000" alt="Additional Photo 39">
+        <img src="https://drive.google.com/thumbnail?id=1X9HPZbzSSbwJVJUrK_FelOczkeszsTuO&sz=s4000" alt="Additional Photo 40">
+        <img src="https://drive.google.com/thumbnail?id=1wyXI2Jtu1WayuU95LdEjs-hTVZ3QIL9C&sz=s4000" alt="Additional Photo 41">
+        <img src="https://drive.google.com/thumbnail?id=13DW4gpQVv1-gqkW1P7RRbWVak1NoDXjr&sz=s4000" alt="Additional Photo 42">
+        <img src="https://drive.google.com/thumbnail?id=1z744Ctm_EYca3fvFX7vzrC0BYD2VJhFI&sz=s4000" alt="Additional Photo 43">
+        <img src="https://drive.google.com/thumbnail?id=1utw2TsEcCgddA4L6yEt5nj9Vwvm4EfVQ&sz=s4000" alt="Additional Photo 44">
+        <img src="https://drive.google.com/thumbnail?id=16KEwN-Zemlp6sjbam6FPTDUsMRwUAD5Q&sz=s4000" alt="Additional Photo 45">
+        <img src="https://drive.google.com/thumbnail?id=1XsFHPVmafwMIz7EiqN0w0SwRP-qH7T7Z&sz=s4000" alt="Additional Photo 46">
+        <img src="https://drive.google.com/thumbnail?id=13b4z2PZ326kO-auxDfvV4MiAY00ISRAE&sz=s4000" alt="Additional Photo 47">
+        <img src="https://drive.google.com/thumbnail?id=15bIJktiVtUcveJfiSSIQq3lODbGEtQZb&sz=s4000" alt="Additional Photo 48">
+        <img src="https://drive.google.com/thumbnail?id=1kYCOVw_JcSrfc0uy2Rlub-Jr5Ec_Lm53&sz=s4000" alt="Additional Photo 49">
+        <img src="https://drive.google.com/thumbnail?id=1Rp_N-uGexg2vVMurSZ66A7eeRyC2fIiZ&sz=s4000" alt="Additional Photo 50">
+        <img src="https://drive.google.com/thumbnail?id=1EbkcZG67K-MICHDY7fQe6Hm2vUzqxm-5&sz=s4000" alt="Additional Photo 51">
+        <img src="https://drive.google.com/thumbnail?id=1a-z5vos0inxl6XDwQOlxE0iggzm7s2aw&sz=s4000" alt="Additional Photo 52">
+        <img src="https://drive.google.com/thumbnail?id=1BjnDID0FDt9dmmWh6yq0NivDwusjBirD&sz=s4000" alt="Additional Photo 53">
+        <img src="https://drive.google.com/thumbnail?id=1bfWhAuAjR2aRqWM46dc1d2jgEdMSLkO1&sz=s4000" alt="Additional Photo 54">
+        <img src="https://drive.google.com/thumbnail?id=1zLffTSH8jcwgmQLfMgOTxdAC0Ybydfoe&sz=s4000" alt="Additional Photo 55">
+        <img src="https://drive.google.com/thumbnail?id=1_OQwGnUNlq-fcJdbNOWrNW1klww2S0dQ&sz=s4000" alt="Additional Photo 56">
+        <img src="https://drive.google.com/thumbnail?id=18JGwwkPFT4B_aHz3ZyPcJx-l9mc64QWP&sz=s4000" alt="Additional Photo 57">
+        <img src="https://drive.google.com/thumbnail?id=1TCMzsDuZS1z1j4VZEqwbkAt4AmCrP_ff&sz=s4000" alt="Additional Photo 58">
+        <img src="https://drive.google.com/thumbnail?id=1MrpnKUUUJkbBjipiy7qcDgPfQgP7fjpj&sz=s4000" alt="Additional Photo 59">
+        <img src="https://drive.google.com/thumbnail?id=1WzMxYgNRU71mJi3z3YCHD96z6H6qaSyG&sz=s4000" alt="Additional Photo 60">
+        <img src="https://drive.google.com/thumbnail?id=1koAHyO9AVOzZbdmCNUr02WNAtmnrW-UU&sz=s4000" alt="Additional Photo 61">
+        <img src="https://drive.google.com/thumbnail?id=10GWvVEcBH3GC1dF4ihfCQ6L3NvPEUtM4&sz=s4000" alt="Additional Photo 62">
+        <img src="https://drive.google.com/thumbnail?id=1NNO9q84m-qW-O-F6CZKaWlHAmPbcZSu6&sz=s4000" alt="Additional Photo 63">
+        <img src="https://drive.google.com/thumbnail?id=17AFWNn40kj7ypeCBcP2vyQk_cJ6g60Ib&sz=s4000" alt="Additional Photo 64">
+        <img src="https://drive.google.com/thumbnail?id=1tYd15kVgT0KdxLdjFZDBdXxowQWlwK4l&sz=s4000" alt="Additional Photo 65">
+        <img src="https://drive.google.com/thumbnail?id=15InQeEeK5O3EQ-1WCBHXARexhsA9sOGY&sz=s4000" alt="Additional Photo 66">
+        <img src="https://drive.google.com/thumbnail?id=1ipkgeUBaGAqJuNnmpSGS1BFGyqDiqnQC&sz=s4000" alt="Additional Photo 67">
+        <img src="https://drive.google.com/thumbnail?id=1SAyDpLiGhtMzhtXMYVUydVJ-ICsrx7GL&sz=s4000" alt="Additional Photo 68">
+        <img src="https://drive.google.com/thumbnail?id=152qt1yg6srfnpFF0YEu3Y7HpMlhqM7cY&sz=s4000" alt="Additional Photo 69">
+        <img src="https://drive.google.com/thumbnail?id=1Cuxgwz699awIMRe057Dd_-E-rnFO_TtY&sz=s4000" alt="Additional Photo 70">
+        <img src="https://drive.google.com/thumbnail?id=18cBj_u0FWtbhjFfWp6KmxLIlSwEjy1JL&sz=s4000" alt="Additional Photo 71">
+        <img src="https://drive.google.com/thumbnail?id=1kW06MzSfqueTIIxr-Rs25naBKQNJXN3l&sz=s4000" alt="Additional Photo 72">
+        <img src="https://drive.google.com/thumbnail?id=1z5h1OkhRe5PX673PSdiZvj5AnvL21U2z&sz=s4000" alt="Additional Photo 73">
+        <img src="https://drive.google.com/thumbnail?id=1ETkX8kUvN6aVWvZFyUbZBdGfDNfO-xA9&sz=s4000" alt="Additional Photo 74">
+        <img src="https://drive.google.com/thumbnail?id=1UucLX-KZChCpld5dukNxZce_JCXJziA1&sz=s4000" alt="Additional Photo 75">
+        <img src="https://drive.google.com/thumbnail?id=1_PbDlEgAP2njbFWbkL0f7uCfMmqxWlJn&sz=s4000" alt="Additional Photo 76">
+        <img src="https://drive.google.com/thumbnail?id=1S0I-u8vdB-3ZKSElz0ikkzmrWQYPnkcA&sz=s4000" alt="Additional Photo 77">
+        <img src="https://drive.google.com/thumbnail?id=1zwhT6ZPhrXBx3JmclzBJzODHNqwuzacm&sz=s4000" alt="Additional Photo 78">
+        <img src="https://drive.google.com/thumbnail?id=1xtiI94SPfyW-XOXrUoAvk_hHJG7RjkKq&sz=s4000" alt="Additional Photo 79">
+        <img src="https://drive.google.com/thumbnail?id=13HOdWtY_w_WFfsxWJgVENj6b_O7dR84F&sz=s4000" alt="Additional Photo 80">
+        <img src="https://drive.google.com/thumbnail?id=1WGJ-3dioR9y9IDra7eCjbSoKoo3KrOTf&sz=s4000" alt="Additional Photo 81">
+        <img src="https://drive.google.com/thumbnail?id=1Q5JmTIvohcTVcvvtPvlCaz5sk_ZCpd1G&sz=s4000" alt="Additional Photo 82">
+        <img src="https://drive.google.com/thumbnail?id=1hvXKkXiukk22Bz8rseZLmdNCrk7bA3am&sz=s4000" alt="Additional Photo 83">
+        <img src="https://drive.google.com/thumbnail?id=1aQWPi4lOsV5FWp8W_Dc7MSVKDZ6pOxgu&sz=s4000" alt="Additional Photo 84">
+        <img src="https://drive.google.com/thumbnail?id=1ZJGmOwQ60lcgWva5Z0yXfwEKra2BpRfV&sz=s4000" alt="Additional Photo 85">
+        <img src="https://drive.google.com/thumbnail?id=1YubJ0ujTqIqg7fi3UldRmNCLBX77LsHj&sz=s4000" alt="Additional Photo 86">
+        <img src="https://drive.google.com/thumbnail?id=1RdppjkGnll5tVvnbaRqHMKyiVUEjt3Kx&sz=s4000" alt="Additional Photo 87">
+        <img src="https://drive.google.com/thumbnail?id=1pTdcw2p93MJaVyjf359cTBBgjFBNEBTt&sz=s4000" alt="Additional Photo 88">
+        <img src="https://drive.google.com/thumbnail?id=1Q2wBDYOH97F2Uq7uOLgtnw0KNwgtR2vV&sz=s4000" alt="Additional Photo 89">
+        <img src="https://drive.google.com/thumbnail?id=1vOup1VGLctKJNDcTx51YjviSZLjg-qGf&sz=s4000" alt="Additional Photo 90">
+        <img src="https://drive.google.com/thumbnail?id=1hvXKkXiukk22Bz8rseZLmdNCrk7bA3am&sz=s4000" alt="Additional Photo 91">
+        <img src="https://drive.google.com/thumbnail?id=1NR64up1kIuDjfTfPuC9UWQJddaCcaNVq&sz=s4000" alt="Additional Photo 92">
+        <img src="https://drive.google.com/thumbnail?id=1uY9lIJKhYroLUocN2Ps8BFySvRrdRRDK&sz=s4000" alt="Additional Photo 93">
+        <img src="https://drive.google.com/thumbnail?id=1ndtGFmVGacIuEBsH5hDF1C80_2u09UkU&sz=s4000" alt="Additional Photo 94">
+        <img src="https://drive.google.com/thumbnail?id=1iz0RcRhXF8zYDAztNBLqGNZ980MgrTcE&sz=s4000" alt="Additional Photo 95">
+        <img src="https://drive.google.com/thumbnail?id=1DJOObPQHmBHl0cBX8WA7ol7uWQExarjz&sz=s4000" alt="Additional Photo 96">
+        <img src="https://drive.google.com/thumbnail?id=1yMrIS6alt0qeF1nqv-Lfy33Ox-AepDi2&sz=s4000" alt="Additional Photo 97">
+        <img src="https://drive.google.com/thumbnail?id=1uErBWHF-Kqif-mktzxTqGitHjhwSefrJ&sz=s4000" alt="Additional Photo 98">
+        <img src="https://drive.google.com/thumbnail?id=1X4tu1NpeeyEEeTsVuGywrwVfynGvME6A&sz=s4000" alt="Additional Photo 99">
+        <img src="https://drive.google.com/thumbnail?id=1AA4UiKahRi3xEXxYaimjjqX28NJMWA0q&sz=s4000" alt="Additional Photo 100">
+    </div>
+
+
+    <div class="mums-gift-message">
+        <h1>Mum's Gift To You!</h1>
+        </div>
+        <div class="mums-gift-video">
+            <iframe src="https://drive.google.com/file/d/1VoQRmZ16q9-TBHuTklq9Usol_rpAhRV7/preview" allow="autoplay"></iframe>
+        </div>           
+                        
+    <div class="video-message">
+    <h1>Haps and Moet showing off their stunning vocals!</h1>
+    </div>
+
+    <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/1xW_3hrkQ80VL60i-_GYUusrAJfrZa-Ki/preview" allow="autoplay"></iframe>
+    </div>
+
+    <div class="sports-day-message">
+        <h2>Giving Usain Bolt a run for his money 😂 </h2>
+    </div>
+
+    <div class="sports-day-video">
+        <iframe src="https://drive.google.com/file/d/1iBh79SzRZ_-btpmkWAGQByqX7mefNHR7/preview" allow="autoplay"></iframe>
+    </div>
+
+    <footer>
+        <p>Here's to an amazing new decade, Senna! Keep shining bright.</p>
+    </footer>
 </body>
+
 </html>
